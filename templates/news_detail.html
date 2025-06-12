@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}News Detail{% endblock %} {% block
+content %}
+<h2>{{ news.title }}</h2>
+<p>
+  By {{ news.author.full_name }} | {{ news.created_at.strftime('%Y-%m-%d') }}
+</p>
+<p>{{ news.content }}</p>
+{% if current_user.is_authenticated and news.user_id == current_user.id %}
+<a href="{{ url_for('update', news_id=news.id) }}"><button>Edit</button></a>
+<form
+  action="{{ url_for('delete_news', news_id=news.id) }}"
+  method="POST"
+  style="display: inline"
+>
+  <button type="submit">Delete</button>
+</form>
+{% endif %} {% endblock %}

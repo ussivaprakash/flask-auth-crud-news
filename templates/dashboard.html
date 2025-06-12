@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<h2>Welcome, {{ current_user.full_name }}</h2>
+<p><a href="{{ url_for('create_news') }}">Create a News Post</a></p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Edit Profile{% endblock %} {% block
+content %}
+<h2>Edit Profile</h2>
+<form method="POST" enctype="multipart/form-data">
+  <input
+    type="text"
+    name="full_name"
+    placeholder="Full Name"
+    value="{{ user.full_name }}"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    value="{{ user.email }}"
+  />
+  <input type="password" name="password" placeholder="New Password" />
+  <input type="file" name="profile_pic" />
+  <input type="submit" value="Update Profile" />
+</form>
+{% endblock %}
