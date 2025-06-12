@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}Update News{% endblock %} {% block
+content %}
+<h2>Edit News</h2>
+<form method="POST">
+  <input type="text" name="title" value="{{ news.title }}" required />
+  <textarea name="content" rows="6" required>{{ news.content }}</textarea>
+  <input type="submit" value="Update" />
+</form>
+{% endblock %}

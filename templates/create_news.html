@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}Create News{% endblock %} {% block
+content %}
+<h2>Create News</h2>
+<form method="POST">
+  <input type="text" name="title" placeholder="Title" required />
+  <textarea name="content" placeholder="Content" rows="6" required></textarea>
+  <input type="submit" value="Post" />
+</form>
+{% endblock %}
